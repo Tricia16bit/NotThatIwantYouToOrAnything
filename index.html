@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
+    <script>
+        function SubForm (){
+            $.ajax({
+                url:"https://api.apispreadsheets.com/data/1945/",
+                type:'post',
+                data:$("#myForm").serializeArray(),
+                success: function(){
+                  alert("Form Data Submitted :)")
+                },
+                error: function(){
+                  alert("There was an error :(")
+                }
+            });
+        }
+        </script>
+</head>
+<body>
+    <label>
+        <input class="press" type="checkbox" />
+        <div class="flip-card">
+            <div class="front">
+                <img src="img/—Pngtree—halloween sack masked man carrying_5517650.png" alt="spookyimg">
+                <p>Halloween is my favorite holiday! And what better way to spend my favorite day with my favorite person! This invite gives you one free hangout with me on October 31st. Hope to see you then!</p>
+                <br>
+                <p>Click to RSVP</p>
+            </div>
+            <div class="back">
+                <h1>RSVP</h1>
+                <form id="myForm">
+                <input type="checkbox" name="Yes" id="Yes"><h1 class="yn">Yes</h1>
+                <input type="checkbox" name="No" id="No"><h1 class="yn">No</h1>
+                </form>
+                <button onclick="SubForm()">Submit</button>
+                <p class="click">Click to return to front</p>
+            </div>
+        </div>
+    </label>
+</body>
+</html>

@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background:#fff;
+    font-family: 'Gloria Hallelujah', cursive;
+    overflow: hidden;
+}
+label{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 580px;
+    height: 650px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.flip-card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all .5s ease-in-out;
+    z-index: 1;
+}
+.flip-card .front,
+.flip-card .back{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+    height: 40rem;
+    background: linear-gradient(180deg, #FC9898 0%, rgba(0, 0, 0, 0) 100%), #7A0016;
+    border-radius: 50%;
+}
+.flip-card .back{
+    transform: rotateY(180deg);
+    color: #000;
+}
+label:hover .flip-card{
+    transform: rotateY(2deg);
+}
+.press{
+    display: none;
+}
+:checked + .flip-card{
+    transform: rotateY(180deg);
+}
+label:hover :checked + .flip-card{
+    transform: rotateY(175deg);
+}
+.front img{
+    position: relative;
+    width: 21rem;
+    height: 21rem;
+    left: 25%;
+    bottom: 1rem;
+}
+.front p{
+    position: relative;
+    color: pink;
+    text-align: center;
+    bottom: 3rem;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+.back h1{
+    position: relative;
+    text-align: center;
+    color: pink;
+    top: 3rem;
+}
+.back .yn{
+    color: rgb(134, 0, 18);
+    top: 7rem;
+    padding: 25px;
+}
+input{
+    position: relative; 
+    left: 40%;
+    top: 10rem;
+    z-index: 1;
+}
+.back .click{
+    position: relative;
+    left: 35%;
+    top: 10rem;
+    color: pink;
+}
+button{
+    position: relative;
+    font-size: 20px;
+    left: 43%;
+    top: 8rem;
+    background-color: rgb(134, 0, 18);
+    color: pink;
+    border: none;
+}
+button:hover{
+    box-shadow: 3px 3px 10px 3px rgb(82, 0, 0);
+    transform: translateX(10px);
+    z-index: 1;
+}
